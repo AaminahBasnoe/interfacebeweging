@@ -1,23 +1,50 @@
-// JavaScript Document
-console.log("Howdy!");
+// Select all buttons on the page
+const start = document.querySelector('body>p');
+const videos = document.querySelectorAll('body>video');
+const buttons = document.querySelectorAll('button');
 
-var button1 = document.querySelector('.functie1');
-var button2 = document.querySelector('.functie2');
-var button3 = document.querySelector('.functie3');
-var body = document.querySelector('body');
+// Add event listeners for mouseenter and mouseleave
+buttons.forEach((button, index) => {
+    const buttonVideo = button.querySelector('video');
 
-function functie1(){
-    body.classList.add('gooien');
-};
+    // If no video is found we'll skip this button
+    if (!buttonVideo) {
+        return;
+    }
 
-function functie2(){
-    body.classList.add('dojo');
-};
+    button.addEventListener('mouseenter', () => {
+        // Play the video if the user hovers over the button
+        buttonVideo.play();
+    });
 
-function functie3(){
-    body.classList.add('sluipen');
-};
+    button.addEventListener('mouseleave', () => {
+        // Pause the video if the user hovers over the button
+        buttonVideo.pause();
+        buttonVideo.currentTime = 0;
+    });
 
-button1.addEventListener('click', functie1);
-button2.addEventListener('click', functie2);
-button3.addEventListener('click', functie3);
+    button.addEventListener('mousedown', () => {
+        if (index === 0) {
+            start.innerHTML = 'Oh nee, een vijand! Sento gooit snel zijn ninjaster';
+        } else if (index === 1) {
+            start.innerHTML = 'Sento is hard aan het trainen in de dojo.';
+        } else {
+            start.innerHTML = 'Sssst, we bevinden ons in het vijandige gebied. Sento sluipt zachtjes voorbij..';
+        }
+
+        stopVideos();
+
+        const animationVideo = videos[index];
+
+        animationVideo.play();
+        animationVideo.style.display = 'block';
+    });
+});
+
+function stopVideos() {
+    videos.forEach((video) => {
+        video.style.display = 'none';
+        video.pause();
+        video.currentTime = 0;
+    });
+}
