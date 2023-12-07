@@ -1,0 +1,158 @@
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+  font-family: 'asianninja';
+  src:url("../fonts/JANSINA.ttf") format("truetype");	
+}
+
+@font-face {
+  font-family: 'maiandra';
+  src:url("../fonts/Maiandra\ GD\ Regular.ttf") format("truetype");	
+}
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+
+/* naar een idee van Jen Simmons */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+body {
+  margin:0;
+}
+
+button:not([disabled]) {
+  cursor:pointer;
+}
+
+img {
+  max-width:100%;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+  --color-headings:#000;
+  /* ... */
+
+}
+
+
+
+
+
+/********************/
+/* ALGEMENE STYLING */
+/********************/
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  background-image: url(../images/forest.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: cover; */
+  height: 100vh;
+}
+
+body.gooien{
+  background-image: url(../images/forest.jpg);
+}
+
+body.dojo{
+  background-image: url(../images/dojo.jpg);
+}
+
+body.sluipen{
+  background-image: url(../images/forestnight.jpg);
+}
+
+
+h1 {
+  font-family: 'asianninja';
+  color: #fff;
+  letter-spacing: .1em;
+  font-size: 3em;
+  position: absolute;
+  top: .3em;
+  background: linear-gradient(to left, #0E0708, #0E0505);
+  padding: .2em;
+}
+
+p{
+  font-family: 'maiandra';
+  color: #fff;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+img{
+  width: 20em;
+}
+
+
+
+
+/* KNOPPEN ///////////////////////////////////////////////////////////////////////////////////// */
+section{
+  display: flex;
+  flex-direction: column;
+  /* gap: 2em; */
+  align-items: center;
+  position: absolute;
+  left: 0;
+  background: linear-gradient(to left, #0E0708, #0E0505);
+  height: 100vh;
+  width: 20%;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  padding: 0;
+}
+
+ul li{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  
+}
+
+button{
+  width: 15em;
+  aspect-ratio: 1/1;
+  padding: 0;
+  background: linear-gradient(to left, #0E0708, #0E0505);
+  border: none;
+}
+
+button video{
+  /* width: 3em; */
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+
+/* ... */
+
+
